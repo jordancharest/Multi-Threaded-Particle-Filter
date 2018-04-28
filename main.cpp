@@ -9,9 +9,9 @@
 #include "robot.hpp"
 
 // GLOBAL - for access by all threads
-static int N = 2048;           // number of particles
+static const int N = 512;           // number of particles
 static int world_size = N/2;   // toroidal world
-static int L = 12;              // number of landmarks
+static const int L = 12;              // number of landmarks
 static const double SENSOR_NOISE = 3.0;
 static const double MOVE_NOISE = 0.08;
 static const double ALLOWABLE = 0.75 * SENSOR_NOISE;
@@ -302,9 +302,9 @@ void init(Robot &robot) {
 // MAIN ==========================================================================================
 int main(int argc, char** argv) {
 
-    if (argc != 4) {
+    if (argc != 3) {
         std::cerr << "ERROR: invalid argument(s)\n";
-        std::cerr << "USAGE: " << argv[0] << " <num-threads> <random-seed> <num-particles>\n";
+        std::cerr << "USAGE: " << argv[0] << " <num-threads> <random-seed>\n";
         exit(EXIT_FAILURE);
     }
 
@@ -320,15 +320,6 @@ int main(int argc, char** argv) {
 
     // seed for random particle generation
     int seed = atoi(argv[2]);
-
-    // number of particles
-    N = atoi(argv[3]);
-    if (N % 64 != 0) {
-        std::cerr << "ERROR: invalid particle count\n";
-        std::cerr << "Make divisible by 64 for best results\n";
-        exit(EXIT_FAILURE);
-    }
-
 
     // Initialize the robot to a random location and define noise levels; start the serial simulation
     generator.seed(seed);
