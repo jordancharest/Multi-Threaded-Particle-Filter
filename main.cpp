@@ -311,7 +311,7 @@ int main(int argc, char** argv) {
     int num_threads = atoi(argv[1]);
     if (num_threads < 2 || num_threads > 64) {
         std::cerr << "ERROR: invalid argument(s)\n";
-        std::cerr << "Number of threads must be between 2 and 32 inclusive\n";
+        std::cerr << "Number of threads must be between 2 and 64 inclusive\n";
         exit(EXIT_FAILURE);
 
     }
