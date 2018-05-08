@@ -179,7 +179,7 @@ void parallel(int num_threads) {
     using namespace std::chrono;
 
     std::cout << "\nParallel Particle Filter - " << num_threads << " threads\n";
-    std::cout << std::setw(6) << "time" << "  |  " << std::setw(12) << " Mean Error " << "  |  "
+    std::cout << std::setw(6) << "time" << "  |  " << std::setw(12) << " Mean Error " << "    |  "
               << std::setw(10) << "Loop Time\n";
 
 
