@@ -5,7 +5,7 @@ Particle Filter Localization in serial and parallel on a simulated robot with pe
 [initial]: ./images/initial_state.png "Initial State"
 [during]: ./images/during.png "Partially Converged"
 [convergence]: ./images/convergence.png "Converged"
-[performance]: ./images/performance.png "Performance"
+[performance]: ./images/runtime.png "Performance"
 [speedup]: ./images/parallelization.png "Speedup"
 
 ## Background & Implementation
